@@ -31,6 +31,12 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
       - "8081:80"
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025"
+    depends_on:
+      - php
 
 volumes:
   data:
